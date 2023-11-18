@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Myth } from '../shared/interfaces/myth.interface';
+import { MYTHS } from '../mock-myths';
 
 @Component({
   selector: 'app-myths',
@@ -7,8 +8,10 @@ import { Myth } from '../shared/interfaces/myth.interface';
   styleUrl: './myths.component.css'
 })
 export class MythsComponent {
-  myth: Myth = {
-    id: 1,
-    name: 'Werewolf'
-  };
+  myths = MYTHS;
+  selectedMyth?: Myth;
+
+  onSelect(myth: Myth): void {
+    this.selectedMyth = myth;
+  }
 }

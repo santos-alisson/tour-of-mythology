@@ -1,6 +1,18 @@
-<div>
-    <label for="name">Myth name: </label>
-    <input id="name" [(ngModel)]="myth.name" placeholder="name">
+<h2>My Myths</h2>
+<ul class="myths">
+  <li *ngFor="let myth of myths">
+    <button [class.selected]="myth === selectedMyth" type="button" (click)="onSelect(myth)">
+      <span class="badge">{{myth.id}} </span>
+      <span class="name">{{myth.name}}</span>
+    </button>
+  </li>
+</ul>
+
+<div *ngIf="selectedMyth">
+    <h2>{{selectedMyth.name | uppercase}} Details</h2>
+    <div>id: {{selectedMyth.id}}</div>
+    <div>
+      <label for="myth-name">Myth name: </label>
+      <input id="myth-name" [(ngModel)]="selectedMyth.name" placeholder="name">
+    </div>
   </div>
-<div><span>id: </span>{{myth.id}}</div>
-<div><span>name: </span>{{myth.name}}</div>
