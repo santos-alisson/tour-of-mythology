@@ -7,12 +7,5 @@
     </button>
   </li>
 </ul>
+<app-myth-detail [myth]="selectedMyth"></app-myth-detail>
 
-<div *ngIf="selectedMyth">
-    <h2>{{selectedMyth.name | uppercase}} Details</h2>
-    <div>id: {{selectedMyth.id}}</div>
-    <div>
-      <label for="myth-name">Myth name: </label>
-      <input id="myth-name" [(ngModel)]="selectedMyth.name" placeholder="name">
-    </div>
-  </div>

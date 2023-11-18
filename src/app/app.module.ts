@@ -5,11 +5,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MythsComponent } from './myths/myths.component';
 import { FormsModule } from '@angular/forms';
+import { MythDetailComponent } from './myth-detail/myth-detail.component';
+import { MessagesComponent } from './shared/components/messages/messages.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MythsComponent
+    MythsComponent,
+    MythDetailComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,
