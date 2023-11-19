@@ -25,4 +25,18 @@ export class MythsComponent implements OnInit{
     this.mythService.getMyths()
         .subscribe(myths => this.myths = myths);
   }
+
+  add(name: string): void {
+    name = name.trim();
+    if (!name) { return; }
+    this.mythService.addMyth({ name } as Myth)
+      .subscribe(myth => {
+        this.myths.push(myth);
+      });
+  }
+
+  delete(myth: Myth): void {
+    this.myths = this.myths.filter(m => m !== myth);
+    this.mythService.deleteMyth(myth.id).subscribe();
+  }
 }

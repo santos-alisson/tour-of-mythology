@@ -13,10 +13,10 @@ export class DashboardComponent implements OnInit {
   constructor(private mythService: MythService) { }
 
   ngOnInit(): void {
-    this.getHeroes();
+    this.getMyths();
   }
 
-  getHeroes(): void {
+  getMyths(): void {
     this.mythService.getMyths()
       .subscribe(myths => this.myths = myths.slice(0, 4));
   }

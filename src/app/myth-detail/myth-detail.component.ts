@@ -29,6 +29,13 @@ export class MythDetailComponent implements OnInit{
       .subscribe(myth => this.myth = myth);
   }
 
+  save(): void {
+    if (this.myth) {
+      this.mythService.updateMyth(this.myth)
+        .subscribe(() => this.goBack());
+    }
+  }
+
   goBack(): void {
     this.location.back();
   }
