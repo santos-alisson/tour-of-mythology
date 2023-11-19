@@ -11,7 +11,6 @@ import { MessageService } from '../shared/services/message.service';
 })
 export class MythsComponent implements OnInit{
   myths : Myth[] = [];
-  selectedMyth?: Myth;
 
   constructor(
     private mythService: MythService,
@@ -20,11 +19,6 @@ export class MythsComponent implements OnInit{
 
   ngOnInit(): void {
     this.getMyths();
-  }
-
-  onSelect(myth: Myth): void {
-    this.selectedMyth = myth;
-    this.messageService.add(`MythsComponent: Selected myth id=${myth.id}`);
   }
 
   getMyths(): void {

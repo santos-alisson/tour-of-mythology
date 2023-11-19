@@ -1,0 +1,6 @@
+<h2>Top Myths</h2>
+<div class="myths-menu">
+  <a *ngFor="let myth of myths" routerLink="/detail/{{myth.id}}">
+    {{myth.name}}
+  </a>
+</div>

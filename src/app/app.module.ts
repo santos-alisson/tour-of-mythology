@@ -7,13 +7,15 @@ import { MythsComponent } from './myths/myths.component';
 import { FormsModule } from '@angular/forms';
 import { MythDetailComponent } from './myth-detail/myth-detail.component';
 import { MessagesComponent } from './shared/components/messages/messages.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MythsComponent,
     MythDetailComponent,
-    MessagesComponent
+    MessagesComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

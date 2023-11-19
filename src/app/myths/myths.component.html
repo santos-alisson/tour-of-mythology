@@ -1,11 +1,8 @@
 <h2>My Myths</h2>
 <ul class="myths">
   <li *ngFor="let myth of myths">
-    <button [class.selected]="myth === selectedMyth" type="button" (click)="onSelect(myth)">
-      <span class="badge">{{myth.id}} </span>
-      <span class="name">{{myth.name}}</span>
-    </button>
+    <a routerLink="/detail/{{myth.id}}">
+      <span class="badge">{{myth.id}}</span> {{myth.name}}
+    </a>
   </li>
 </ul>
-<app-myth-detail [myth]="selectedMyth"></app-myth-detail>
-
