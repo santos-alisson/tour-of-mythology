@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Tour of Mythology';
+  showMessages = false;
+  messagesButtonText = 'Show messages';
+
+  toggleMessages(): void {
+    this.showMessages = !this.showMessages;
+    this.messagesButtonText = this.messagesButtonText.startsWith('S') ? 'Hide messages' : 'Show messages';
+  }
 }

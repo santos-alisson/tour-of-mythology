@@ -14,7 +14,6 @@ export class MythsComponent implements OnInit{
 
   constructor(
     private mythService: MythService,
-    private messageService: MessageService
   ) {}
 
   ngOnInit(): void {
@@ -27,8 +26,10 @@ export class MythsComponent implements OnInit{
   }
 
   add(name: string): void {
-    name = name.trim();
-    if (!name) { return; }
+    name = name?.trim();
+    if (!name) {
+      return; 
+    }
     this.mythService.addMyth({ name } as Myth)
       .subscribe(myth => {
         this.myths.push(myth);
@@ -36,7 +37,7 @@ export class MythsComponent implements OnInit{
   }
 
   delete(myth: Myth): void {
-    this.myths = this.myths.filter(m => m !== myth);
+    this.myths = this.myths.filter(mythfilter => mythfilter !== myth);
     this.mythService.deleteMyth(myth.id).subscribe();
   }
 }

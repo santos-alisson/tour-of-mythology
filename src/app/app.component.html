@@ -4,4 +4,7 @@
     <a routerLink="/myths">Myths</a>
 </nav>
 <router-outlet></router-outlet>
-<app-messages></app-messages>
+
+<button type="button" class="clear"
+            (click)="toggleMessages()">{{messagesButtonText}}</button>
+<app-messages *ngIf="showMessages"></app-messages>

@@ -2,8 +2,6 @@
 <div>
   <label for="new-myth">Myth name: </label>
   <input id="new-myth" #mythName />
-
-  <!-- (click) passes input value to add() and then clears the input -->
   <button type="button" class="add-button" (click)="add(mythName.value); mythName.value=''">
     Add myth
   </button>

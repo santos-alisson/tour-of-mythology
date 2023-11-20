@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './shared/services/in-memory-data.service';
+import { MythSearchComponent } from './myth-search/myth-search.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { InMemoryDataService } from './shared/services/in-memory-data.service';
     MythsComponent,
     MythDetailComponent,
     MessagesComponent,
-    DashboardComponent
+    DashboardComponent,
+    MythSearchComponent
   ],
   imports: [
     BrowserModule,

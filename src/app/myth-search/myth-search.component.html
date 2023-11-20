@@ -1,0 +1,12 @@
+<div id="search-component">
+    <label for="search-box">Myth Search</label>
+    <input #searchBox id="search-box" (input)="search(searchBox.value)" />
+  
+    <ul class="search-result">
+      <li *ngFor="let myth of myths$ | async" >
+        <a routerLink="/detail/{{myth.id}}">
+          {{myth.name}}
+        </a>
+      </li>
+    </ul>
+  </div>
