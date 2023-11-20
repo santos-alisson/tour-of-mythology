@@ -9,7 +9,7 @@ import { Myth } from '../shared/interfaces/myth.interface';
   styleUrl: './myth-search.component.css'
 })
 export class MythSearchComponent implements OnInit{
-  myths$!: Observable<Myth[]>;
+  myths$: Observable<Myth[]>;
   private searchTerms$ = new Subject<string>();
 
   constructor(

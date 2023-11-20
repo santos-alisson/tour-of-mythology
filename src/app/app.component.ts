@@ -12,6 +12,6 @@ export class AppComponent {
 
   toggleMessages(): void {
     this.showMessages = !this.showMessages;
-    this.messagesButtonText = this.messagesButtonText.startsWith('S') ? 'Hide messages' : 'Show messages';
+    this.messagesButtonText = this.showMessages ? 'Hide messages' : 'Show messages';
   }
 }

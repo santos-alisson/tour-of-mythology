@@ -37,7 +37,9 @@ export class MythsComponent implements OnInit{
   }
 
   delete(myth: Myth): void {
-    this.myths = this.myths.filter(mythfilter => mythfilter !== myth);
-    this.mythService.deleteMyth(myth.id).subscribe();
+    this.myths = this.myths.filter(mythFilter => mythFilter !== myth);
+    this.mythService.deleteMyth(myth.id).subscribe(mythFilter => {
+      mythFilter !== myth
+    });
   }
 }

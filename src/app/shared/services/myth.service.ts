@@ -32,7 +32,7 @@ export class MythService {
   getMyth(id: number): Observable<Myth> {
     const url = `${this.mythsUrl}/${id}`;
     return this.http.get<Myth>(url).pipe(
-      tap(_ => this.log(`fetched myth id=${id}`)),
+      tap(() => this.log(`fetched myth id=${id}`)),
       catchError(this.handleError<Myth>(`getMyth id=${id}`))
     );
   }
@@ -44,10 +44,10 @@ export class MythService {
     );
   }
   
-  updateMyth(myth: Myth): Observable<any> {
-    return this.http.put(this.mythsUrl, myth, this.httpOptions).pipe(
-      tap(_ => this.log(`updated myth id=${myth.id}`)),
-      catchError(this.handleError<any>('updateMyth'))
+  updateMyth(myth: Myth): Observable<Myth> {
+    return this.http.put<Myth>(this.mythsUrl, myth, this.httpOptions).pipe(
+      tap(() => this.log(`updated myth id=${myth.id}`)),
+      catchError(this.handleError<Myth>('updateMyth'))
     );
   }
 
@@ -67,7 +67,7 @@ export class MythService {
     const url = `${this.mythsUrl}/${id}`;
   
     return this.http.delete<Myth>(url, this.httpOptions).pipe(
-      tap(_ => this.log(`deleted myth id=${id}`)),
+      tap(() => this.log(`deleted myth id=${id}`)),
       catchError(this.handleError<Myth>('deleteMyth'))
     );
   }
